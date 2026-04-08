@@ -1,0 +1,3067 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Selamat Ulang Tahun Sayangku - Surat Cinta Digital Ultimate 🎂</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff4d94;
+            --secondary: #9c27b0;
+            --accent: #ff6b9d;
+            --gold: #ffd700;
+            --rose-gold: #b76e79;
+            --purple-dark: #1a0b2e;
+            --purple-medium: #2d1b69;
+            --purple-light: #6a11cb;
+            --blue-dark: #0f3460;
+            --notebook-yellow: #fffacd;
+            --notebook-line: #8b4513;
+            --notebook-paper: #fef9e7;
+            --notebook-brown: #8b4513;
+            --gradient-main: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-dark: linear-gradient(135deg, var(--purple-dark), var(--blue-dark));
+            --gradient-gold: linear-gradient(135deg, var(--gold), #ffed4e);
+            --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.12));
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-dark);
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+            position: relative;
+            transition: background 1s ease;
+        }
+
+        /* Pattern Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(183, 110, 121, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 30%, rgba(156, 39, 176, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 80%, rgba(255, 77, 148, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 30% 60%, rgba(255, 215, 0, 0.1) 0%, transparent 15%);
+            background-size: 500px 500px;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Secret Menu Toggle - Hanya muncul setelah loading */
+        .secret-menu-toggle {
+            position: fixed;
+            top: 25px;
+            right: 100px;
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1002;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: none; /* Sembunyikan saat loading */
+        }
+
+        .website-content-loaded .secret-menu-toggle {
+            display: flex; /* Tampilkan setelah loading selesai */
+        }
+
+        .secret-menu-toggle:hover {
+            transform: scale(1.1);
+            background: var(--gradient-main);
+        }
+
+        .secret-dot {
+            width: 6px;
+            height: 6px;
+            background: white;
+            margin: 2px 0;
+            border-radius: 50%;
+        }
+
+        /* Hamburger Menu - Hanya muncul setelah loading */
+        .hamburger-menu {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: none; /* Sembunyikan saat loading */
+        }
+
+        .website-content-loaded .hamburger-menu {
+            display: flex; /* Tampilkan setelah loading selesai */
+        }
+
+        .hamburger-menu:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 2px;
+            background: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* Secret Password Modal */
+        .secret-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .secret-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .secret-modal-content {
+            background: var(--gradient-card);
+            border-radius: 25px;
+            padding: 50px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 2px solid var(--rose-gold);
+            box-shadow: 0 25px 75px rgba(0, 0, 0, 0.7);
+            transform: translateY(-30px);
+            transition: transform 0.5s ease;
+        }
+
+        .secret-modal.active .secret-modal-content {
+            transform: translateY(0);
+        }
+
+        .secret-modal-icon {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        .secret-modal h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .secret-modal p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 18px 25px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid var(--purple-light);
+            border-radius: 15px;
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .password-submit {
+            background: var(--gradient-main);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: 600;
+        }
+
+        .password-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .password-error {
+            color: #ff4d4d;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            min-height: 25px;
+            display: none;
+        }
+
+        .password-hint {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Secret Wishlist Section - CATATAN FULL LAYAR */
+        .secret-wishlist {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f5f0e1;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .secret-wishlist.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .secret-wishlist-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+        }
+
+        .secret-wishlist-title {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--notebook-brown), #5d2906);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        .secret-wishlist-title::before {
+            content: "📒";
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+        }
+
+        .secret-wishlist-title::after {
+            content: "📒";
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+        }
+
+        .secret-wishlist-subtitle {
+            font-size: 1.3rem;
+            color: #5a4a42;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-style: italic;
+            position: relative;
+            padding: 15px;
+            background: rgba(139, 69, 19, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid var(--notebook-brown);
+        }
+
+        .wishlist-note-container {
+            background: var(--notebook-paper);
+            border-radius: 10px;
+            padding: 60px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-left: 8px solid var(--notebook-brown);
+            min-height: 600px;
+        }
+
+        .wishlist-note-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(transparent 95%, rgba(139, 69, 19, 0.1) 95%);
+            background-size: 100% 30px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .wishlist-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .wishlist-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: var(--notebook-brown);
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px dashed var(--notebook-brown);
+            padding-bottom: 15px;
+        }
+
+        .wishlist-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .wishlist-section:last-child {
+            border-bottom: none;
+        }
+
+        .wishlist-section h3 {
+            font-size: 1.8rem;
+            color: var(--notebook-brown);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .wishlist-section h3 i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .wishlist-section ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .wishlist-section li {
+            font-size: 1.1rem;
+            color: #5a4a42;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .wishlist-section li::before {
+            content: "❤️";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .wishlist-section p {
+            font-size: 1.1rem;
+            color: #5a4a42;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .wishlist-priority {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 77, 148, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 10px;
+            border: 1px solid rgba(255, 77, 148, 0.3);
+        }
+
+        .close-wishlist {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(139, 69, 19, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: var(--notebook-brown);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10001;
+            border: 2px solid rgba(139, 69, 19, 0.2);
+        }
+
+        .close-wishlist:hover {
+            background: var(--notebook-brown);
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        /* Loading Screen dengan Efek Gosok Surat */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .envelope-container {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            margin-bottom: 50px;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+
+        .envelope-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff2d75, var(--secondary));
+            clip-path: polygon(0 0, 100% 0, 50% 50%);
+            z-index: 3;
+        }
+
+        .letter {
+            position: absolute;
+            width: 90%;
+            height: 85%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 25px;
+            top: 10px;
+            left: 5%;
+            z-index: 1;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(120%);
+            transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .letter-content {
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .letter-content h3 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .letter-content p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .envelope-icon {
+            font-size: 4.5rem;
+            color: white;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        }
+
+        .scratch-instruction {
+            color: white;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 25px;
+            max-width: 400px;
+            padding: 15px 25px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .scratch-instruction i {
+            color: var(--gold);
+            margin-right: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* Efek Gosok */
+        .scratch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            cursor: grabbing;
+        }
+
+        .skip-button {
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+
+        .skip-button:hover {
+            background: var(--gradient-main);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Progress Loading Screen */
+        #progressLoading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s ease;
+        }
+
+        .loading-content {
+            text-align: center;
+            max-width: 700px;
+            padding: 30px;
+        }
+
+        .loading-logo {
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .loading-text {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .loading-progress-container {
+            width: 350px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            margin: 40px auto;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .loading-progress-bar {
+            height: 100%;
+            background: var(--gradient-main);
+            width: 0%;
+            border-radius: 6px;
+            transition: width 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .loading-percentage {
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin: 15px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .loading-subtext {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            margin-top: 10px;
+            min-height: 30px;
+        }
+
+        /* Website Content - Setelah Loading */
+        #websiteContent {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 350px;
+            height: 100%;
+            background: rgba(26, 11, 46, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 100px 40px 40px;
+            box-shadow: -5px 0 40px rgba(0, 0, 0, 0.5);
+            border-left: 3px solid var(--rose-gold);
+        }
+
+        .sidebar-nav.active {
+            right: 0;
+        }
+
+        .nav-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-header h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .nav-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 12px;
+        }
+
+        .nav-menu a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.15rem;
+            padding: 18px 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background: var(--gradient-main);
+            transform: translateX(-10px);
+            box-shadow: var(--shadow);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-menu i {
+            margin-right: 15px;
+            font-size: 1.3rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gradient-main);
+            z-index: 1000;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(255, 77, 148, 0.7);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-main);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255, 77, 148, 0.2) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-icon {
+            font-size: 6rem;
+            color: var(--gold);
+            margin-bottom: 30px;
+            display: inline-block;
+            animation: floatHero 6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(255, 215, 0, 0.3));
+        }
+
+        @keyframes floatHero {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-highlight {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.4rem;
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* Section Common Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 60px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 4px;
+            background: var(--gradient-gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            transform: rotate(-3deg);
+            transition: all 0.6s ease;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-image:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 2.3rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-main);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .qualities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 2.5rem;
+        }
+
+        .quality-tag {
+            background: rgba(255, 77, 148, 0.15);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 1px solid rgba(255, 77, 148, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .quality-tag:hover {
+            background: var(--gradient-main);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.5s ease;
+            position: relative;
+            height: 350px;
+            border: 2px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+            border-color: var(--rose-gold);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            color: white;
+            padding: 30px;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .gallery-caption p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Stories Section */
+        .stories {
+            padding: 100px 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--gradient-main);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(255, 77, 148, 0.5);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 70px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 70px;
+        }
+
+        .timeline-content {
+            padding: 35px;
+            background: var(--gradient-card);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .timeline-date i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.7rem;
+        }
+
+        .timeline-content p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            top: 30px;
+            right: -12px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -13px;
+        }
+
+        /* Wishlist Section */
+        .wishlist {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .wishlist-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .wishlist-item {
+            background: var(--gradient-card);
+            border-radius: 25px;
+            padding: 45px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .wishlist-item:hover {
+            transform: translateY(-15px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--rose-gold);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .wishlist-icon {
+            font-size: 3.8rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .wishlist-item h3 {
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .wishlist-item p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        /* Future Section */
+        .future {
+            padding: 100px 0;
+        }
+
+        .future-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--gradient-card);
+            border-radius: 30px;
+            padding: 60px 50px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .future-content p {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        /* Relationship Section */
+        .relationship {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .relationship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .relationship-card {
+            background: var(--gradient-card);
+            border-radius: 25px;
+            padding: 45px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .relationship-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--rose-gold);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .relationship-icon {
+            font-size: 3.2rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .relationship-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .relationship-card p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+
+        /* Message Section */
+        .message {
+            padding: 100px 0;
+        }
+
+        .message-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--gradient-card);
+            border-radius: 35px;
+            padding: 70px 60px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-main);
+            box-shadow: 0 0 20px rgba(255, 77, 148, 0.7);
+        }
+
+        .message-content {
+            font-size: 1.3rem;
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 50px;
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+
+        .message-content p {
+            margin-bottom: 30px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 50px;
+            text-align: right;
+            font-weight: 700;
+        }
+
+        .hearts {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 25px;
+        }
+
+        .heart {
+            font-size: 3rem;
+            color: var(--primary);
+            animation: heartbeat 1.5s infinite;
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+        }
+
+        .heart:nth-child(2) {
+            animation-delay: 0.2s;
+            color: var(--secondary);
+        }
+
+        .heart:nth-child(3) {
+            animation-delay: 0.4s;
+            color: var(--rose-gold);
+        }
+
+        .heart:nth-child(4) {
+            animation-delay: 0.6s;
+            color: var(--gold);
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.4); }
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 100px 0 50px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 4.5rem;
+            margin-bottom: 40px;
+            color: var(--gold);
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            animation: pulse 2s infinite;
+        }
+
+        .footer-message {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .social-icons a:hover {
+            background: var(--gradient-main);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .copyright {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        /* Confetti Effect */
+        .confetti {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            top: -10px;
+            z-index: 9998;
+            pointer-events: none;
+            border-radius: 50%;
+        }
+
+        /* Floating Elements */
+        .floating-heart {
+            position: fixed;
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.2;
+            z-index: -1;
+            pointer-events: none;
+            animation: floatHeart 25s infinite linear;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                opacity: 0.2;
+            }
+            25% {
+                transform: translate(100px, 150px) rotate(90deg) scale(1.1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(0, 300px) rotate(180deg) scale(1);
+                opacity: 0.2;
+            }
+            75% {
+                transform: translate(-100px, 150px) rotate(270deg) scale(0.9);
+                opacity: 0.1;
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg) scale(1);
+                opacity: 0.2;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                gap: 50px;
+            }
+            
+            .about-image {
+                width: 80%;
+                margin: 0 auto;
+            }
+            
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 30px;
+                left: 0 !important;
+            }
+            
+            .timeline-dot {
+                left: -13px !important;
+                right: auto !important;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .envelope-container {
+                width: 280px;
+                height: 200px;
+            }
+            
+            .wishlist-note-container {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-icon {
+                font-size: 4.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .gallery-container,
+            .wishlist-container,
+            .relationship-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .message-card {
+                padding: 50px 30px;
+            }
+            
+            .sidebar-nav {
+                width: 300px;
+                padding: 90px 30px 30px;
+            }
+            
+            .secret-menu-toggle {
+                top: 20px;
+                right: 90px;
+            }
+            
+            .hamburger-menu {
+                top: 20px;
+                right: 20px;
+            }
+            
+            .envelope-container {
+                width: 250px;
+                height: 180px;
+            }
+            
+            .scratch-instruction {
+                font-size: 1.1rem;
+            }
+            
+            .loading-text {
+                font-size: 1.8rem;
+            }
+            
+            .loading-progress-container {
+                width: 280px;
+            }
+            
+            .secret-wishlist-title {
+                font-size: 2.5rem;
+            }
+            
+            .secret-wishlist-title::before,
+            .secret-wishlist-title::after {
+                font-size: 1.8rem;
+                left: -20px;
+                right: -20px;
+            }
+            
+            .wishlist-note-container {
+                padding: 30px 20px;
+            }
+            
+            .wishlist-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .message-card {
+                padding: 40px 25px;
+            }
+            
+            .signature {
+                font-size: 3rem;
+            }
+            
+            .about-image {
+                width: 100%;
+            }
+            
+            .hero-icon {
+                font-size: 3.5rem;
+            }
+            
+            .envelope-container {
+                width: 220px;
+                height: 160px;
+            }
+            
+            .letter-content h3 {
+                font-size: 1.8rem;
+            }
+            
+            .letter-content p {
+                font-size: 1rem;
+            }
+            
+            .loading-text {
+                font-size: 1.5rem;
+            }
+            
+            .loading-progress-container {
+                width: 250px;
+            }
+            
+            .secret-menu-toggle {
+                right: 80px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .hamburger-menu {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .secret-wishlist-title {
+                font-size: 2rem;
+            }
+            
+            .secret-wishlist-subtitle {
+                font-size: 1rem;
+            }
+            
+            .wishlist-note-container {
+                padding: 25px 15px;
+            }
+            
+            .wishlist-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .wishlist-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Secret Menu Toggle (Titik 3 di pojok kanan) -->
+    <div class="secret-menu-toggle" id="secretMenuToggle">
+        <div class="secret-dot"></div>
+        <div class="secret-dot"></div>
+        <div class="secret-dot"></div>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+        <div class="hamburger-line"></div>
+    </div>
+
+    <!-- Secret Password Modal -->
+    <div class="secret-modal" id="secretModal">
+        <div class="secret-modal-content">
+            <div class="secret-modal-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2>Catatan Rahasia 📒</h2>
+            <p>Masukkan password untuk mengakses catatan wishlist rahasia untukmu sayang 💖</p>
+            <input type="text" class="password-input" id="passwordInput" placeholder="Masukkan password...">
+            <button class="password-submit" id="passwordSubmit">Buka Catatan Rahasia</button>
+            <div class="password-error" id="passwordError">Password salah! Coba lagi.</div>
+            <div class="password-hint">Hint: 3 kata cinta yang paling sering kuucapkan padamu (dalam bahasa Inggris)</div>
+        </div>
+    </div>
+
+    <!-- Secret Wishlist Section dengan Tema Catatan -->
+    <div class="secret-wishlist" id="secretWishlist">
+        <div class="close-wishlist" id="closeWishlist">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="secret-wishlist-content">
+            <h1 class="secret-wishlist-title">Catatan Wishlist Rahasia</h1>
+            <p class="secret-wishlist-subtitle">Ini adalah daftar keinginan dan impian yang ingin aku wujudkan untukmu, sayang. Setiap item adalah ungkapan cintaku yang ingin membuatmu bahagia.</p>
+            
+            <div class="wishlist-note-container">
+                <div class="wishlist-content">
+                    <h2>📝 Daftar Keinginan untuk Kebahagiaanmu</h2>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-plane"></i> Petualangan Bersama</h3>
+                        <ul>
+                            <li>Liburan romantis ke Bali - Villa pribadi dengan kolam renang, sunset di pantai, makanan lokal</li>
+                            <li>Road trip ke Yogyakarta - Mengunjungi candi, mencoba kuliner khas, tinggal di penginapan tradisional</li>
+                            <li>Naik hot air balloon - Menikmati pemandangan dari ketinggian saat matahari terbit</li>
+                            <li>Kunjungi Tokyo - Menikmati budaya Jepang, makanan street food, dan teknologi canggih</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Tinggi</div>
+                    </div>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-gem"></i> Hadiah Spesial</h3>
+                        <ul>
+                            <li>Kalung emas dengan initial kita berdua - Simbol ikatan yang tak terputus</li>
+                            <li>Jam tangan elegan - Untuk mengingatkan setiap detik kebersamaan kita</li>
+                            <li>Bingkai foto digital - Menampilkan koleksi foto kenangan kita yang bisa berubah</li>
+                            <li>Perhiasan khusus - Dirancang khusus untukmu dengan simbol cinta kita</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Sedang</div>
+                    </div>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-heart"></i> Pengalaman Romantis</h3>
+                        <ul>
+                            <li>Makan malam di restoran bintang 5 - Dengan pemandangan kota dan live music</li>
+                            <li>Sesi foto profesional - Mengabadikan momen indah kita dengan fotografer terbaik</li>
+                            <li>Kursus memasak bersama - Belajar membuat masakan favorit kita berdua</li>
+                            <li>Konser musik klasik - Menikmati malam romantis dengan alunan musik indah</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Tinggi</div>
+                    </div>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-home"></i> Untuk Rumah Kita</h3>
+                        <ul>
+                            <li>Perpustakaan mini - Rak buku khusus untuk koleksi buku favorit kita</li>
+                            <li>Taman kecil - Dengan tanaman bunga favoritmu dan tempat duduk yang nyaman</li>
+                            <li>Dapur impian - Lengkap dengan semua peralatan untuk memasak bersama</li>
+                            <li>Sistem musik rumah - Untuk mendengarkan lagu favorit kita di setiap sudut rumah</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Sedang</div>
+                    </div>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-spa"></i> Perawatan & Relaksasi</h3>
+                        <ul>
+                            <li>Paket spa sehari penuh - Pijat, facial, dan perawatan tubuh lengkap</li>
+                            <li>Retreat wellness - Menginap di resort kesehatan untuk refresh pikiran dan tubuh</li>
+                            <li>Membership gym - Dengan personal trainer untuk menjaga kesehatan kita</li>
+                            <li>Kelas yoga berdua - Untuk relaksasi dan menjaga kebugaran bersama</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Rendah</div>
+                    </div>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-book"></i> Koleksi Kenangan</h3>
+                        <ul>
+                            <li>Buku harian cinta - Diisi bersama dengan kenangan, foto, dan cerita kita</li>
+                            <li>Album foto digital - Koleksi semua foto kita dari awal sampai sekarang</li>
+                            <li>Peta perjalanan - Menandai semua tempat yang sudah kita kunjungi bersama</li>
+                            <li>Kotak kenangan - Berisi tiket, stiker, dan benda-benda kenangan kecil kita</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Sedang</div>
+                    </div>
+                    
+                    <div class="wishlist-section">
+                        <h3><i class="fas fa-graduation-cap"></i> Pengembangan Diri</h3>
+                        <ul>
+                            <li>Kursus online - Untuk mengembangkan bakat dan minatmu</li>
+                            <li>Workshop kreatif - Melukis, menulis, atau kerajinan tangan bersama</li>
+                            <li>Kelas bahasa - Belajar bahasa baru bersama untuk persiapan traveling</li>
+                            <li>Seminar motivasi - Untuk terus menginspirasi dan mengembangkan potensi kita</li>
+                        </ul>
+                        <div class="wishlist-priority">Prioritas: Sedang</div>
+                    </div>
+                    
+                    <p style="margin-top: 40px; font-style: italic; color: var(--notebook-brown); text-align: center; border-top: 1px dashed var(--notebook-brown); padding-top: 20px;">
+                        Setiap item dalam daftar ini adalah janji cintaku untuk membuatmu bahagia. Aku akan berusaha mewujudkan semuanya, satu per satu, karena kamu pantas mendapatkan yang terbaik dalam hidup.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Screen dengan Efek Gosok Surat -->
+    <div id="loadingScreen">
+        <div class="envelope-container">
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-front">
+                    <div class="envelope-icon">💌</div>
+                </div>
+                <div class="letter">
+                    <div class="letter-content">
+                        <h3>Untuk Cintaku</h3>
+                        <p>Selamat Ulang Tahun Sayang!</p>
+                        <p>Gosok amplop ini untuk membuka kejutan spesial untukmu...</p>
+                        <i class="fas fa-heart" style="color: #ff4d94; font-size: 2rem; margin-top: 15px;"></i>
+                    </div>
+                </div>
+                <canvas class="scratch-overlay" id="scratchCanvas"></canvas>
+            </div>
+        </div>
+        <div class="scratch-instruction">
+            <i class="fas fa-hand-point-up"></i>
+            <span>Gosok amplop untuk membuka surat spesial ini</span>
+        </div>
+    </div>
+
+    <!-- Progress Loading Screen -->
+    <div id="progressLoading">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="loading-text">Menyiapkan Kejutan Spesial 💝</div>
+            
+            <div class="loading-progress-container">
+                <div class="loading-progress-bar" id="progressBar"></div>
+            </div>
+            
+            <div class="loading-percentage" id="percentage">0%</div>
+            <div class="loading-subtext" id="loadingText">Memuat pesan cinta pertama...</div>
+            
+            <button class="skip-button" id="skipProgressButton">
+                <i class="fas fa-forward"></i> Akses Cepat
+            </button>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar-nav" id="sidebarNav">
+        <div class="nav-header">
+            <h3>Menu Cinta 💝</h3>
+            <p>Navigasi khusus untukmu sayang</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about" class="nav-link"><i class="fas fa-star"></i> Tentang Dia</a></li>
+            <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Album Kenangan</a></li>
+            <li><a href="#stories" class="nav-link"><i class="fas fa-book-open"></i> Kisah Kita</a></li>
+            <li><a href="#wishlist" class="nav-link"><i class="fas fa-gift"></i> Harapan untukmu</a></li>
+            <li><a href="#future" class="nav-link"><i class="fas fa-road"></i> Masa Depan Kita</a></li>
+            <li><a href="#relationship" class="nav-link"><i class="fas fa-heartbeat"></i> Hubungan Kita</a></li>
+            <li><a href="#message" class="nav-link"><i class="fas fa-envelope-open-text"></i> Surat Cinta</a></li>
+        </ul>
+    </div>
+
+    <!-- Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Back to Top -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Website Content -->
+    <div id="websiteContent">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h1>🎂 Selamat Ulang Tahun Sayangku! 🎂</h1>
+                    <h2>Hari Spesial untuk Wanita Terhebat di Dunia</h2>
+                    <p>Di hari yang penuh berkah ini, aku ingin mengucapkan selamat ulang tahun untuk wanita paling istimewa dalam hidupku. Setiap momen bersamamu adalah anugerah yang tak ternilai.</p>
+                    <p>Semoga hari ini dan semua hari yang akan datang dipenuhi dengan kebahagiaan, cinta, dan segala hal baik yang pantas kamu dapatkan.</p>
+                    <div class="hero-highlight">
+
+                        💖 Kamu adalah alasan terbesar kebahagiaanku 💖
+                    </div>
+                <div>
+                    <button class="skip-button" id="skipScratchButton">
+                    <i class="fas fa-bolt"></i> KAA707
+                    </button>    
+                </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">💫 Mengenai Wanita Hebat Ini</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="anime1.jpg" alt="foto pacar">
+                    </div>
+                    <div class="about-text">
+                        <h3>✨ Keindahan Jiwa dan Rupa ✨</h3>
+                        <p>Dia adalah kombinasi sempurna antara kecerdasan, kelembutan, dan kekuatan. Setiap hari bersamanya adalah pelajaran tentang arti cinta sejati dan kehidupan yang penuh makna.</p>
+                        <p>Senyumannya mampu menerangi ruangan terkelam sekalipun, dan tawanya adalah musik terindah yang pernah kudengar. Dia adalah sumber inspirasiku, motivasiku, dan alasan aku tersenyum setiap hari.</p>
+                        <div class="qualities">
+                            <span class="quality-tag">Cantik</span>
+                            <span class="quality-tag">Cerdas</span>
+                            <span class="quality-tag">Perhatian</span>
+                            <span class="quality-tag">Kuat</span>
+                            <span class="quality-tag">Inspiratif</span>
+                            <span class="quality-tag">Penuh Cinta</span>
+                            <span class="quality-tag">Setia</span>
+                            <span class="quality-tag">Pengertian</span>
+                            <span class="quality-tag">Hangat</span>
+                            <span class="quality-tag">Berbakat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2 class="section-title">📸 Album Kenangan Indah</h2>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="anime2.jpg" alt="Kenangan 1">
+                        <div class="gallery-caption">
+                            <h3>Momen Pertemuan</h3>
+                            <p>Hari yang mengubah segalanya dalam hidupku</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="anime3.jpg" alt="Kenangan 2">
+                        <div class="gallery-caption">
+                            <h3>Petualangan Bersama</h3>
+                            <p>Menjelajahi dunia berdua, menciptakan cerita</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="anime4.jpg" alt="Kenangan 3">
+                        <div class="gallery-caption">
+                            <h3>Senyuman Terindah</h3>
+                            <p>Senyuman yang selalu kurindukan setiap hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories Section -->
+        <section class="stories" id="stories">
+            <div class="container">
+                <h2 class="section-title">📖 Kisah Perjalanan Kita</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="far fa-calendar-alt"></i> Januari 2022</div>
+                            <h3>Pertemuan Tak Terduga</h3>
+                            <p>Kita bertemu secara tidak sengaja di acara itu. Aku masih ingat bagaimana senyumanmu membuatku tak bisa berkata-kata. Hari itu adalah awal dari segalanya.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="far fa-calendar-alt"></i> Maret 2022</div>
+                            <h3>Kencan Pertama yang Tak Terlupakan</h3>
+                            <p>Kita pergi ke kafe kecil itu dan berbicara selama berjam-jam. Aku menyadari betapa mudahnya berbicara denganmu tentang apa pun. Waktu terasa begitu cepat berlalu.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="far fa-calendar-alt"></i> Juli 2022</div>
+                            <h3>Perjalanan Pertama Bersama</h3>
+                            <p>Kita pergi ke pantai bersama. Melihatmu tertawa di tepi laut, dengan rambutmu tertiup angin, aku tahu bahwa aku ingin menghabiskan lebih banyak waktu bersamamu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wishlist Section -->
+        <section class="wishlist" id="wishlist">
+            <div class="container">
+                <h2 class="section-title">🎁 Harapan & Impian Untukmu</h2>
+                <div class="wishlist-container">
+                    <div class="wishlist-item">
+                        <div class="wishlist-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Kesehatan & Kebahagiaan</h3>
+                        <p>Semoga kamu selalu diberi kesehatan yang prima dan kebahagiaan yang tak terhingga. Aku ingin melihatmu tersenyum setiap hari dan menjalani hidup dengan penuh semangat.</p>
+                    </div>
+                    <div class="wishlist-item">
+                        <div class="wishlist-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Kesuksesan & Prestasi</h3>
+                        <p>Semoga semua impian dan cita-citamu tercapai. Aku tahu kamu adalah wanita yang kuat dan mampu meraih segala yang kamu inginkan. Aku akan selalu mendukungmu.</p>
+                    </div>
+                    <div class="wishlist-item">
+                        <div class="wishlist-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Petualangan & Pengalaman</h3>
+                        <p>Semoga kita bisa menjelajahi dunia bersama, mengunjungi tempat-tempat indah, dan menciptakan kenangan yang tak terlupakan di setiap sudut bumi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Section -->
+        <section class="future" id="future">
+            <div class="container">
+                <h2 class="section-title">🌟 Harapan untuk Masa Depan Kita</h2>
+                <div class="future-content">
+                    <p>Aku membayangkan masa depan di mana kita bisa tumbuh bersama, belajar dari satu sama lain, dan membangun kehidupan yang penuh cinta dan pengertian.</p>
+                    <p>Aku berharap kita bisa mengatasi semua tantangan bersama, merayakan setiap kemenangan kecil, dan terus memperkuat ikatan yang kita miliki. Aku ingin menjadi bagian dari setiap bab kehidupanmu yang akan datang.</p>
+                    <p>Di masa depan, aku berharap kita bisa memiliki rumah yang penuh tawa, perjalanan yang menginspirasi, dan cinta yang semakin dalam seiring berjalannya waktu. Aku tidak sabar untuk melihat ke mana kehidupan akan membawa kita.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Relationship Section -->
+        <section class="relationship" id="relationship">
+            <div class="container">
+                <h2 class="section-title">💞 Tentang Hubungan Kita</h2>
+                <div class="relationship-grid">
+                    <div class="relationship-card">
+                        <div class="relationship-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3>Dukungan Tanpa Syarat</h3>
+                        <p>Kita selalu saling mendukung dalam segala hal. Kamu adalah penyemangat terbesarku, dan aku berjanji akan selalu menjadi penyemangatmu juga.</p>
+                    </div>
+                    <div class="relationship-card">
+                        <div class="relationship-icon">
+                            <i class="fas fa-laugh-beam"></i>
+                        </div>
+                        <h3>Tawa & Kebahagiaan</h3>
+                        <p>Bersamamu, setiap hari terasa lebih cerih. Tawamu adalah musik terindah, dan kebahagiaanmu adalah prioritas utamaku.</p>
+                    </div>
+                    <div class="relationship-card">
+                        <div class="relationship-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Komunikasi Terbuka</h3>
+                        <p>Kita selalu bisa membicarakan apa pun tanpa takut dihakimi. Komunikasi jujur kita adalah fondasi terkuat dalam hubungan ini.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Section -->
+        <section class="message" id="message">
+            <div class="container">
+                <h2 class="section-title">💌 Surat Cinta Untukmu</h2>
+                <div class="message-card">
+                    <div class="message-content">
+                        <p>Sayangku yang tersayang,</p>
+                        <p>Di hari ulang tahunmu yang spesial ini, aku ingin mengucapkan selamat atas segala hal menakjubkan yang telah kamu capai dan orang luar biasa yang kamu jadikan. Kamu adalah wanita yang kuat, bijaksana, dan penuh kasih.</p>
+                        <p>Terima kasih telah menjadi cahaya dalam hidupku, sahabat terbaikku, dan cinta sejatiku. Kamu mengajari aku arti cinta sejati tanpa syarat dan bagaimana menjadi pribadi yang lebih baik setiap harinya.</p>
+                        <p>Aku masih ingat momen-momen kecil yang kita lalui bersama: tawa kita yang tak terkontrol, percakapan larut malam, dan cara kamu selalu tahu apa yang aku butuhkan bahkan sebelum aku menyadarinya sendiri.</p>
+                        <p>Aku berjanji akan selalu ada untukmu, mendukung impianmu, merayakan kesuksesanmu, dan menghiburmu di saat-saat sulit. Bersamamu, aku telah menemukan rumah yang tidak pernah aku tahu aku butuhkan.</p>
+                        <p>Semoga tahun ini membawa lebih banyak kebahagiaan, petualangan, dan cinta daripada yang bisa kita bayangkan. Aku tidak sabar untuk melihat apa yang akan kita capai bersama.</p>
+                        <p>Selamat ulang tahun, sayang. Kamu adalah hadiah terbesar dalam hidupku dan alasan terbesarku untuk bersyukur setiap hari.</p>
+                    </div>
+                    <div class="signature">
+                        Dengan cinta abadi,
+                    </div>
+                    <div class="hearts">
+                        <div class="heart">❤️</div>
+                        <div class="heart">💖</div>
+                        <div class="heart">💕</div>
+                        <div class="heart">💗</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <p class="footer-message">Website premium ini dibuat dengan penuh cinta dan perhatian untuk wanita terhebat di dunia. Semoga setiap hari dalam hidupmu dipenuhi dengan kebahagiaan, cinta, dan keberkahan yang tak terhingga.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2025 Surat Cinta Digital Ultimate | Dibuat dengan ❤️ untuk ulang tahun spesialmu | KAA707
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize variables
+        const loadingScreen = document.getElementById('loadingScreen');
+        const progressLoading = document.getElementById('progressLoading');
+        const websiteContent = document.getElementById('websiteContent');
+        
+        // Secret wishlist variables
+        const secretMenuToggle = document.getElementById('secretMenuToggle');
+        const secretModal = document.getElementById('secretModal');
+        const secretWishlist = document.getElementById('secretWishlist');
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordSubmit = document.getElementById('passwordSubmit');
+        const passwordError = document.getElementById('passwordError');
+        const closeWishlist = document.getElementById('closeWishlist');
+        
+        // Scratch canvas variables
+        const scratchCanvas = document.getElementById('scratchCanvas');
+        const letter = document.querySelector('.letter');
+        const envelope = document.querySelector('.envelope');
+        const ctx = scratchCanvas.getContext('2d');
+        const skipScratchButton = document.getElementById('skipScratchButton');
+        
+        // Progress loading variables
+        const progressBar = document.getElementById('progressBar');
+        const percentage = document.getElementById('percentage');
+        const loadingText = document.getElementById('loadingText');
+        const skipProgressButton = document.getElementById('skipProgressButton');
+        
+        // Navigation variables
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const sidebarNav = document.getElementById('sidebarNav');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollProgress = document.getElementById('scrollProgress');
+        const backToTop = document.getElementById('backToTop');
+        
+        // Scratch effect variables
+        let isScratching = false;
+        let scratchPercentage = 0;
+        let isScratchComplete = false;
+        let lastX, lastY;
+        
+        // Progress loading variables
+        let loadingProgress = 0;
+        let isLoaded = false;
+        let skipLoading = false;
+        
+        // Secret wishlist variables
+        let isPasswordCorrect = false;
+        
+        const loadingMessages = [
+            "Memuat pesan cinta pertama...",
+            "Menyiapkan kenangan indah...",
+            "Mengumpulkan momen spesial...",
+            "Menyusun kata-kata dari hati...",
+            "Menghias dengan cinta...",
+            "Hampir selesai, sayang..."
+        ];
+        
+        // Initialize secret wishlist functionality
+        function initSecretWishlist() {
+            // Toggle password modal
+            secretMenuToggle.addEventListener('click', () => {
+                secretModal.classList.add('active');
+                passwordInput.focus();
+            });
+            
+            // Submit password
+            passwordSubmit.addEventListener('click', checkPassword);
+            passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    checkPassword();
+                }
+            });
+            
+            // Close wishlist
+            closeWishlist.addEventListener('click', () => {
+                secretWishlist.classList.remove('active');
+            });
+            
+            // Close modal when clicking outside
+            secretModal.addEventListener('click', (e) => {
+                if (e.target === secretModal) {
+                    secretModal.classList.remove('active');
+                }
+            });
+        }
+        
+        // Check password
+        function checkPassword() {
+            const password = passwordInput.value.trim().toLowerCase();
+            
+            if (password === "i love you") {
+                // Password correct
+                isPasswordCorrect = true;
+                passwordError.style.display = 'none';
+                
+                // Close modal and show wishlist
+                secretModal.classList.remove('active');
+                
+                // Show secret wishlist
+                secretWishlist.classList.add('active');
+                
+                // Reset input
+                passwordInput.value = '';
+                
+                // Add scroll functionality to wishlist
+                secretWishlist.addEventListener('wheel', (e) => {
+                    e.stopPropagation();
+                });
+                
+                // Prevent body scroll when wishlist is open
+                document.body.style.overflow = 'hidden';
+                
+                // Close wishlist with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && secretWishlist.classList.contains('active')) {
+                        secretWishlist.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Restore body scroll when wishlist is closed
+                secretWishlist.addEventListener('transitionend', () => {
+                    if (!secretWishlist.classList.contains('active')) {
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+            } else {
+                // Password incorrect
+                passwordError.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.focus();
+                
+                // Shake animation for error
+                passwordInput.style.animation = 'none';
+                setTimeout(() => {
+                    passwordInput.style.animation = 'shake 0.5s';
+                }, 10);
+            }
+        }
+        
+        // Create confetti for wishlist reveal
+        function createWishlistConfetti() {
+            const colors = ['#ff4d94', '#9c27b0', '#ff6b9d', '#ffd700', '#b76e79', '#8b4513', '#6a11cb'];
+            
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 15 + 8 + 'px';
+                confetti.style.height = Math.random() * 15 + 8 + 'px';
+                
+                // Random shapes
+                if (Math.random() > 0.7) {
+                    confetti.style.borderRadius = '50%';
+                } else if (Math.random() > 0.5) {
+                    confetti.style.transform = 'rotate(45deg)';
+                }
+                
+                document.body.appendChild(confetti);
+                
+                // Animation
+                const animation = confetti.animate([
+                    { 
+                        transform: `translateY(0) rotate(0deg) scale(1)`,
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 720}deg) scale(${Math.random() * 0.5 + 0.5})`,
+                        opacity: 0 
+                    }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+                    delay: Math.random() * 500
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Initialize scratch loading
+        function initScratchLoading() {
+            // Set up canvas
+            setupScratchCanvas();
+            
+            // Set up event listeners
+            setupScratchEvents();
+            
+            // Add skip button functionality
+            skipScratchButton.addEventListener('click', skipToProgressLoading);
+            
+            // Add floating hearts for decoration
+            createScratchHearts();
+            
+            // Auto-skip fallback after 30 seconds
+            setTimeout(() => {
+                if (!isScratchComplete) {
+                    skipToProgressLoading();
+                }
+            }, 30000);
+        }
+        
+        // Set up scratch canvas
+        function setupScratchCanvas() {
+            scratchCanvas.width = envelope.offsetWidth;
+            scratchCanvas.height = envelope.offsetHeight;
+            
+            // Fill canvas with gray
+            ctx.fillStyle = '#999';
+            ctx.fillRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+            ctx.globalCompositeOperation = 'destination-out';
+            
+            // Add texture to canvas
+            ctx.globalAlpha = 0.7;
+            for (let i = 0; i < 100; i++) {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.fillRect(
+                    Math.random() * scratchCanvas.width,
+                    Math.random() * scratchCanvas.height,
+                    Math.random() * 10 + 5,
+                    Math.random() * 10 + 5
+                );
+            }
+            ctx.globalAlpha = 1;
+        }
+        
+        // Set up scratch events
+        function setupScratchEvents() {
+            scratchCanvas.addEventListener('mousedown', handleMouseDown);
+            scratchCanvas.addEventListener('touchstart', handleTouchStart);
+            scratchCanvas.addEventListener('mousemove', handleMouseMove);
+            scratchCanvas.addEventListener('touchmove', handleTouchMove);
+            scratchCanvas.addEventListener('mouseup', handleMouseUp);
+            scratchCanvas.addEventListener('touchend', handleTouchEnd);
+            
+            // Prevent context menu on canvas
+            scratchCanvas.addEventListener('contextmenu', (e) => e.preventDefault());
+        }
+        
+        function handleMouseDown(e) {
+            isScratching = true;
+            const rect = scratchCanvas.getBoundingClientRect();
+            lastX = e.clientX - rect.left;
+            lastY = e.clientY - rect.top;
+            
+            // Draw immediately on mouse down
+            drawScratchCircle(lastX, lastY, 25);
+            checkScratchProgress();
+        }
+        
+        function handleTouchStart(e) {
+            isScratching = true;
+            const rect = scratchCanvas.getBoundingClientRect();
+            lastX = e.touches[0].clientX - rect.left;
+            lastY = e.touches[0].clientY - rect.top;
+            
+            // Draw immediately on touch start
+            drawScratchCircle(lastX, lastY, 30);
+            checkScratchProgress();
+            
+            e.preventDefault();
+        }
+        
+        function handleMouseMove(e) {
+            if (!isScratching) return;
+            
+            const rect = scratchCanvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            drawScratchLine(x, y);
+            
+            lastX = x;
+            lastY = y;
+            
+            checkScratchProgress();
+        }
+        
+        function handleTouchMove(e) {
+            if (!isScratching) return;
+            
+            const rect = scratchCanvas.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const y = e.touches[0].clientY - rect.top;
+            
+            drawScratchLine(x, y);
+            
+            lastX = x;
+            lastY = y;
+            
+            checkScratchProgress();
+            
+            e.preventDefault();
+        }
+        
+        function drawScratchLine(x, y) {
+            ctx.lineWidth = 35;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            
+            // Additional effect for better experience
+            drawScratchCircle(x, y, 15);
+        }
+        
+        function drawScratchCircle(x, y, radius) {
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        function checkScratchProgress() {
+            scratchPercentage = calculateScratchedPercentage();
+            
+            // If 50% scratched, open envelope
+            if (scratchPercentage > 50) {
+                openEnvelope();
+            }
+        }
+        
+        // Calculate scratched percentage
+        function calculateScratchedPercentage() {
+            const imageData = ctx.getImageData(0, 0, scratchCanvas.width, scratchCanvas.height);
+            const pixels = imageData.data;
+            let transparentPixels = 0;
+            let totalPixels = 0;
+            
+            // Sample pixels for better performance
+            for (let i = 3; i < pixels.length; i += 8) {
+                totalPixels++;
+                if (pixels[i] === 0) {
+                    transparentPixels++;
+                }
+            }
+            
+            return (transparentPixels / totalPixels) * 100;
+        }
+        
+        function handleMouseUp() {
+            isScratching = false;
+        }
+        
+        function handleTouchEnd() {
+            isScratching = false;
+        }
+        
+        // Open envelope
+        function openEnvelope() {
+            if (isScratchComplete) return;
+            
+            // Remove event listeners
+            scratchCanvas.removeEventListener('mousedown', handleMouseDown);
+            scratchCanvas.removeEventListener('touchstart', handleTouchStart);
+            scratchCanvas.removeEventListener('mousemove', handleMouseMove);
+            scratchCanvas.removeEventListener('touchmove', handleTouchMove);
+            scratchCanvas.removeEventListener('mouseup', handleMouseUp);
+            scratchCanvas.removeEventListener('touchend', handleTouchEnd);
+            
+            // Animate envelope opening
+            envelope.style.transform = 'scale(1.15)';
+            envelope.style.transition = 'transform 0.6s ease';
+            
+            // Animate letter coming out
+            setTimeout(() => {
+                letter.style.transform = 'translateY(0)';
+                
+                // Add confetti
+                createConfetti();
+                
+                // Transition to progress loading
+                setTimeout(() => {
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transform = 'scale(0.9)';
+                    
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        progressLoading.style.opacity = '1';
+                        progressLoading.style.pointerEvents = 'all';
+                        
+                        // Start progress loading
+                        startProgressLoading();
+                    }, 500);
+                }, 1500);
+            }, 300);
+            
+            isScratchComplete = true;
+        }
+        
+        // Skip to progress loading
+        function skipToProgressLoading() {
+            if (isScratchComplete) return;
+            
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                progressLoading.style.opacity = '1';
+                progressLoading.style.pointerEvents = 'all';
+                
+                // Start progress loading
+                startProgressLoading();
+            }, 300);
+            
+            isScratchComplete = true;
+        }
+        
+        // Create scratch hearts
+        function createScratchHearts() {
+            const hearts = ['❤️', '💖', '💕', '💗', '💓', '💞', '💝'];
+            
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = Math.random() * 25 + 15 + 'px';
+                heart.style.animationDelay = Math.random() * 10 + 's';
+                heart.style.animationDuration = Math.random() * 20 + 15 + 's';
+                
+                document.body.appendChild(heart);
+            }
+        }
+        
+        // Start progress loading
+        function startProgressLoading() {
+            if (skipLoading) return;
+            
+            const updateProgress = () => {
+                if (skipLoading) return;
+                
+                if (loadingProgress < 100) {
+                    // Smart progress increment
+                    let increment = 1;
+                    if (loadingProgress < 30) increment = 2;
+                    else if (loadingProgress < 70) increment = 1.5;
+                    else increment = 0.8;
+                    
+                    loadingProgress += increment;
+                    
+                    // Update UI
+                    progressBar.style.width = loadingProgress + '%';
+                    percentage.textContent = Math.floor(loadingProgress) + '%';
+                    
+                    // Update loading text
+                    if (loadingProgress % 16 < 1.5) {
+                        const messageIndex = Math.min(Math.floor(loadingProgress / 16), loadingMessages.length - 1);
+                        loadingText.textContent = loadingMessages[messageIndex];
+                    }
+                    
+                    // Continue loading
+                    requestAnimationFrame(updateProgress);
+                } else {
+                    isLoaded = true;
+                    percentage.textContent = "100%";
+                    loadingText.textContent = "Siap! Membuka website...";
+                    
+                    // Transition to website
+                    setTimeout(openWebsite, 1000);
+                }
+            };
+            
+            requestAnimationFrame(updateProgress);
+            
+            // Add skip button functionality
+            skipProgressButton.addEventListener('click', skipProgressLoading);
+        }
+        
+        // Skip progress loading
+        function skipProgressLoading() {
+            skipLoading = true;
+            loadingProgress = 100;
+            progressBar.style.width = '100%';
+            percentage.textContent = "100%";
+            loadingText.textContent = "Melompati...";
+            
+            // Open website immediately
+            setTimeout(openWebsite, 300);
+        }
+        
+        // Open website
+        function openWebsite() {
+            // Hide progress loading
+            progressLoading.style.opacity = '0';
+            progressLoading.style.transform = 'translateY(-30px)';
+            
+            // Show website content
+            setTimeout(() => {
+                progressLoading.style.display = 'none';
+                websiteContent.style.display = 'block';
+                
+                // Trigger animation
+                setTimeout(() => {
+                    websiteContent.style.opacity = '1';
+                    
+                    // Add class to body to show navigation elements
+                    document.body.classList.add('website-content-loaded');
+                    
+                    // Initialize website effects
+                    initWebsiteEffects();
+                    
+                    // Create celebration effect
+                    createCelebrationEffect();
+                }, 50);
+            }, 800);
+        }
+        
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#ff4d94', '#9c27b0', '#ff6b9d', '#ffd700', '#b76e79', '#6a11cb'];
+            
+            for (let i = 0; i < 80; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 12 + 6 + 'px';
+                confetti.style.height = Math.random() * 12 + 6 + 'px';
+                
+                // Random shapes
+                if (Math.random() > 0.7) {
+                    confetti.style.borderRadius = '50%';
+                } else if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '0';
+                    confetti.style.transform = 'rotate(45deg)';
+                }
+                
+                document.body.appendChild(confetti);
+                
+                // Animation
+                const animation = confetti.animate([
+                    { 
+                        transform: `translateY(0) rotate(0deg) scale(1)`,
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 720}deg) scale(${Math.random() * 0.5 + 0.5})`,
+                        opacity: 0 
+                    }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+                    delay: Math.random() * 500
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Initialize website effects
+        function initWebsiteEffects() {
+            // Initialize scroll effects
+            initScrollEffects();
+            
+            // Initialize navigation
+            initNavigation();
+            
+            // Initialize secret wishlist
+            initSecretWishlist();
+            
+            // Preload images
+            preloadImages();
+            
+            // Add intersection observer
+            initIntersectionObserver();
+        }
+        
+        // Initialize scroll effects
+        function initScrollEffects() {
+            // Scroll progress
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                scrollProgress.style.width = scrolled + '%';
+                
+                // Back to top button
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Update active menu
+                updateActiveMenu();
+            }, { passive: true });
+            
+            // Back to top button
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Initialize navigation
+        function initNavigation() {
+            // Toggle sidebar
+            hamburgerMenu.addEventListener('click', toggleSidebar);
+            navOverlay.addEventListener('click', toggleSidebar);
+            
+            // Close sidebar when clicking links
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    sidebarNav.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                });
+            });
+            
+            // Smooth scroll for links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Toggle sidebar
+        function toggleSidebar() {
+            sidebarNav.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            hamburgerMenu.classList.toggle('active');
+        }
+        
+        // Update active menu
+        function updateActiveMenu() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }
+        
+        // Preload images
+        function preloadImages() {
+            const images = [
+                'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+                'https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+                'https://images.unsplash.com/photo-1529254479751-fbacb4c7a587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+                'https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+            ];
+            
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+        
+        // Initialize intersection observer
+        function initIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            // Observe elements for animation
+            document.querySelectorAll('.gallery-item, .wishlist-item, .relationship-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
+        
+        // Create celebration effect
+        function createCelebrationEffect() {
+            // Create confetti
+            const colors = ['#ff4d94', '#9c27b0', '#ff6b9d', '#ffd700', '#b76e79'];
+            
+            for (let i = 0; i < 200; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 15 + 8 + 'px';
+                confetti.style.height = Math.random() * 15 + 8 + 'px';
+                
+                // Random shapes
+                if (Math.random() > 0.7) {
+                    confetti.style.borderRadius = '50%';
+                } else if (Math.random() > 0.5) {
+                    confetti.style.transform = 'rotate(45deg)';
+                }
+                
+                document.body.appendChild(confetti);
+                
+                // Animation
+                const animation = confetti.animate([
+                    { 
+                        transform: `translateY(0) rotate(0deg) scale(1)`,
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 720}deg) scale(${Math.random() * 0.5 + 0.5})`,
+                        opacity: 0 
+                    }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+                    delay: Math.random() * 500
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+            
+            // Create floating hearts
+            createFloatingHearts();
+        }
+        
+        // Create floating hearts
+        function createFloatingHearts() {
+            const hearts = ['❤️', '💖', '💕', '💗', '💓', '💞', '💝'];
+            
+            for (let i = 0; i < 25; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+                heart.style.animationDelay = Math.random() * 15 + 's';
+                heart.style.animationDuration = Math.random() * 30 + 25 + 's';
+                
+                document.body.appendChild(heart);
+            }
+        }
+        
+        // Add shake animation for password error
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            // Initialize scratch loading
+            initScratchLoading();
+            
+            // Optimize performance
+            document.addEventListener('touchstart', function() {}, {passive: true});
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Recalculate active menu
+            updateActiveMenu();
+            
+            // Re-setup canvas if scratch loading is still active
+            if (loadingScreen.style.display !== 'none') {
+                setupScratchCanvas();
+            }
+        });
+    </script>
+</body>
+</html>
